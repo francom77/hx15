@@ -1,0 +1,118 @@
+
+@sidebar_width: 300px;
+
+input[type="search"]::-webkit-search-cancel-button {
+    display: initial;
+}
+
+input::-webkit-input-placeholder {
+    color: gray;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: #CCC;
+}
+
+input {
+    outline: 0;
+    font-family: "Open Sans";
+}
+
+body {
+    margin: 0;
+    background-color: #f9f9f9;
+    font-family: "Open Sans";
+}
+
+.sidebar {
+
+    width: @sidebar_width;
+    height: 100%;
+    background-color: #f1f1f1;
+    display: block;
+    position: absolute;
+    border-right: 1px solid #CCC;
+
+    .search {
+        background: #e2e2e2;
+        font-size: 28px;
+        box-sizing: border-box;
+        padding: 10px;
+        height: initial;
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid #CCC;
+
+        &:focus {
+            background-color: #7D7D7D;
+            color: white;
+        }
+    }
+
+    .items-list {
+
+        .item {
+            @item_height: 80px;
+
+            width: 100%;
+            height: @item_height;
+            overflow: hidden;
+            border-bottom: 1px solid #CCC;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover, &.active {
+                background-color: #f9f9f9;
+
+                h2 {
+                    color: #0099ff;
+                }
+            }
+
+            &.active {
+                background-color: white;
+                .thumb {
+                    width: 0;
+                }
+                .text {
+                    width: 100%;
+                }
+            }
+
+            .thumb {
+                width: @item_height;
+                height: @item_height;
+                float: left;
+                background-color: #333;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .text {
+                padding: 6px 10px;
+                float: right;
+                width: ~"calc(100% - 80px)";
+                box-sizing: border-box;
+                transition: all 0.3s ease-in-out;
+            }
+
+            h2 {
+                margin: 0;
+                font-size: 18px;
+                transition: all 0.3s ease-in-out;
+            }
+            p {
+                margin: 0;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+
+.main {
+    position: absolute;
+    display: block;
+    width: ~"calc(100% - 300px)";;
+    height: 100%;
+    right: 0;
+}
