@@ -71,6 +71,7 @@ body {
 
             &.active {
                 background-color: white;
+                cursor: default;
                 .thumb {
                     width: 0;
                 }
@@ -110,9 +111,25 @@ body {
 
 
 .main {
+
     position: absolute;
     display: block;
     width: ~"calc(100% - 300px)";;
     height: 100%;
     right: 0;
+
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+
+        .loader-inner {
+            & > div {
+                background-color: #0099ff;
+                border: 0;
+            }
+        }
+    }
 }
+

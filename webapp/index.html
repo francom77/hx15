@@ -6,47 +6,43 @@
         -->
         <link rel="stylesheet/less" type="text/css" href="styles/main.less" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="styles/loaders.min.css">
     </head>
     <body>
+
+        <script type="text/html" id="item-template">
+            <div class="item">
+                <div class="thumb"></div>
+                <div class="text">
+                    <h2>{{title}}</h2>
+                    <p>{{ubicacion}}</p>
+                </div>
+            </div>
+        </script>
 
         <aside>
             <section class="sidebar">
                 <input type="search" class="search" placeholder="Buscar">
                 <div class="items-list">
-                    <div class="item">
-                        <div class="thumb"></div>
-                        <div class="text">
-                            <h2>Intuicion</h2>
-                            <p>Blablablab asbdflaksdf balsdf bkasdbf laksdbf asdf</p>
-                        </div>
-                    </div>
-                    <div class="item active">
-                        <div class="thumb"></div>
-                        <div class="text">
-                            <h2>Intuicion</h2>
-                            <p>Blablablab asbdflaksdf balsdf bkasdbf laksdbf asdf</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="thumb"></div>
-                        <div class="text">
-                            <h2>Intuicion</h2>
-                            <p>Blablablab asbdflaksdf balsdf bkasdbf laksdbf asdf</p>
-                        </div>
-                    </div>
+                    <!-- items will be rendered dinamically -->
                 </div>
             </section>
         </aside>
 
-
         <div class="main">
-        
+            <div class='loader'>
+                <div class='loader-inner square-spin'>
+                    <div></div>
+                </div>
+            </div>
         </div>
     
         <script src="js/libs/less.min.js"></script>
         <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+        <script src="js/libs/mustache.min.js"></script>
         <script src="js/libs/underscore.js"></script>
         <script src="js/libs/backbone.js"></script>
         <script src="materialize/js/materialize.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

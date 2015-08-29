@@ -1,3 +1,4 @@
+# encoding:utf-8
 from django.shortcuts import render, HttpResponse
 import urllib2
 import simplejson
@@ -11,6 +12,7 @@ def get_data(request):
 	
 	esculturas = Escultura.objects.all()
 	response = []
+	callback_name = request.GET.get("callback", "callback")
 
 	for e in esculturas:
 
@@ -44,4 +46,4 @@ def get_data(request):
 
 		response.append(escultura)
 
-	return HttpResponse(simplejson.dumps(response), content_type='application/json')
+	return HttpResponse(callback_name+"("+simplejson.dumps(response)+");", content_type='application/json')
